@@ -1,5 +1,6 @@
 import '#style/TheFrenchPress.scss';
 import { useState } from 'react';
+import AInput from './AInput';
 
 interface PropsInterface {
   onPour: (mls: number) => void;
@@ -7,9 +8,11 @@ interface PropsInterface {
 
 const TheFrenchPress = ({ onPour }: PropsInterface) => {
   const [mlsLeft, setMlsLeft] = useState<number>(270);
-  const [mlsToPour, setMlsToPour] = useState<number>(30);
+  const [mlsToPour, setMlsToPour] = useState<number | null>(30);
   const style = { height: `${mlsLeft}px` };
   const handlePour = (): void => {
+    if (mlsToPour === null) return;
+
     if (mlsToPour <= 0 || mlsLeft < mlsToPour || mlsToPour > 50) {
       alert('Veuillez entrer une quantité valide');
       return;
@@ -18,7 +21,7 @@ const TheFrenchPress = ({ onPour }: PropsInterface) => {
     onPour(mlsToPour);
   };
   return (
-    <div>
+    <div id="the-french-press">
       <div
         className="french-press"
         onClick={() => handlePour()}
@@ -37,15 +40,10 @@ const TheFrenchPress = ({ onPour }: PropsInterface) => {
       {mlsLeft === 0 ? (
         <label>VIDE</label>
       ) : (
-        <label>
-          Verser :
-          <input
-            type="number"
-            value={mlsToPour}
-            onChange={(e) => setMlsToPour(Number(e.target.value))}
-          />
-          mls
-        </label>
+        <AInput
+          labelTitle="Verser : "
+          onChange={(value) => setMlsToPour(value)}
+        />
       )}
     </div>
   );

@@ -1,6 +1,5 @@
 import '#style/cup.scss';
 import Cup from '#types/Cup';
-const colors = ['orange', 'vert', 'bleu', 'jaune'];
 
 interface PropsInterface {
   cup: Cup;

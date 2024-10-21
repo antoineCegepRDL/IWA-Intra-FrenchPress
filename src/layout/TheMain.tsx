@@ -13,11 +13,9 @@ const TheMain = () => {
     setCups([...cups, { quantityInCup: ml, cupColor: randomColor }]);
   };
 
-  const mlPoured = cups.reduce((acc, cup) => acc + cup.quantityInCup, 0);
-
   return (
     <main className="wrapper">
-      <TheFrenchPress onPour={(ml) => handlePour(ml)} />
+      <TheFrenchPress onPour={handlePour} />
       <div className="flex">
         {cups.map((cup, index) => (
           <ACup
