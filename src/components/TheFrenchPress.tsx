@@ -1,6 +1,6 @@
-import '#style/TheFrenchPress.scss';
+import '#style/FrenchPress.scss';
 import { useState } from 'react';
-import AInput from './AInput';
+import AInput from './ANumberInput';
 
 interface PropsInterface {
   onPour: (mls: number) => void;

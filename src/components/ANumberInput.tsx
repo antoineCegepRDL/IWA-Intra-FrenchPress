@@ -1,4 +1,3 @@
-import '#style/TheFrenchPress.scss';
 import { useState } from 'react';
 
 interface PropsInterface {
@@ -6,12 +5,12 @@ interface PropsInterface {
   labelTitle: string;
 }
 
-const AInput = ({ onChange, labelTitle }: PropsInterface) => {
-  const [value, setValue] = useState<number | string>(30);
+const ANumberInput = ({ onChange, labelTitle }: PropsInterface) => {
+  const [value, setValue] = useState<string>('30');
   const handleOnChange = (value: string) => {
     if (Number.isInteger(+value)) {
       onChange(+value);
-      setValue(+value);
+      setValue(value);
     } else if (value === '') {
       setValue('');
       onChange(null);
@@ -32,4 +31,4 @@ const AInput = ({ onChange, labelTitle }: PropsInterface) => {
   );
 };
 
-export default AInput;
+export default ANumberInput;
