@@ -3,6 +3,8 @@ import "#style/Cup.scss";
 import CupColorEnum from "#types/CupColor";
 import ANumberInput from "../components/ANumberInput";
 
+
+// N'oublie pas de créer une nouvelle tasse à partir de l'interface dans le dossier types.
 const TheMain = () => {
   return (
     <main className="wrapper">
