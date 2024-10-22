@@ -41,3 +41,6 @@ Si tu utilises IWA, tu dois me dire dans ton code où tu as utilisé l'IA. Ou
 
 C'est la même que pour les pommes et est disponible sur teams.
 
+## Et on a des tests?
+
+OUI! J'ai ajouté les test playwrights!
