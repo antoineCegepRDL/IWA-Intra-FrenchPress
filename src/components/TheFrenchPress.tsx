@@ -4,10 +4,10 @@ import AInput from './ANumberInput';
 
 interface PropsInterface {
   onPour: (mls: number) => void;
+  mlsLeft: number;
 }
 
-const TheFrenchPress = ({ onPour }: PropsInterface) => {
-  const [mlsLeft, setMlsLeft] = useState<number>(270);
+const TheFrenchPress = ({ mlsLeft, onPour }: PropsInterface) => {
   const [mlsToPour, setMlsToPour] = useState<number | null>(30);
   const style = { height: `${mlsLeft}px` };
   const handlePour = (): void => {
@@ -17,7 +17,6 @@ const TheFrenchPress = ({ onPour }: PropsInterface) => {
       alert('Veuillez entrer une quantité valide');
       return;
     }
-    setMlsLeft(mlsLeft - mlsToPour);
     onPour(mlsToPour);
   };
   return (

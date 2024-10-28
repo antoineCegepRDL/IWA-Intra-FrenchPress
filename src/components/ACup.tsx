@@ -3,11 +3,12 @@ import Cup from '#types/Cup';
 
 interface PropsInterface {
   cup: Cup;
+  onClick: (mls: number) => void;
 }
 
-const TheTime = ({ cup }: PropsInterface) => {
+const TheTime = ({ onClick, cup }: PropsInterface) => {
   return (
-    <div className="cup">
+    <div className="cup" onClick={() => {onClick(cup.quantityInCup)}}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 200"
